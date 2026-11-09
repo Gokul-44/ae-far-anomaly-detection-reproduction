@@ -1,0 +1,10 @@
+[SMD] train (566724, 38) val (141681, 38) test (708420, 38) anomaly rate 0.0416 device cuda
+[SMD] ae seed 0 stage1 {'kind': 'ae', 'status': 'early_stopped', 'epochs_run': 33, 'best_val_loss': 0.3139391878136882, 'best_epoch': 21, 'train_s': 449.5, 'mean_epoch_s': 13.621848484848483}
+[SMD] ae seed 0 stage2 {'kind': 'composite', 'status': 'early_stopped', 'epochs_run': 34, 'best_val_loss': 0.27882943599204707, 'best_epoch': 22, 'train_s': 1038.3, 'mean_epoch_s': 30.53655882352941}
+[SMD] ae seed 1 stage1 {'kind': 'ae', 'status': 'early_stopped', 'epochs_run': 23, 'best_val_loss': 0.30856577270305036, 'best_epoch': 11, 'train_s': 294.5, 'mean_epoch_s': 12.802086956521737}
+[[SMD] ae seed 1 stage2 {'kind': 'composite', 'status': 'early_stopped', 'epochs_run': 48, 'best_val_loss': 0.25789641175341693, 'best_epoch': 36, 'train_s': 1439.6, 'mean_epoch_s': 29.99}
+[SMD] ae seed 2 stage1 {'kind': 'ae', 'status': 'early_stopped', 'epochs_run': 45, 'best_val_loss': 0.30517714892622577, 'best_epoch': 33, 'train_s': 581.2, 'mean_epoch_s': 12.915022222222222}
+[SMD] ae seed 2 stage2 {'kind': 'composite', 'status': 'early_stopped', 'epochs_run': 18, 'best_val_loss': 0.2823077718581745, 'best_epoch': 6, 'train_s': 526.9, 'mean_epoch_s': 29.27122222222222}
+[SMD] DONE
+
+[SMD] DONE

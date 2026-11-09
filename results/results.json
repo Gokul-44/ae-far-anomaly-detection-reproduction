@@ -1,0 +1,782 @@
+{
+  "environment": {
+    "python": "3.14.6",
+    "torch": "2.13.0+cu130",
+    "gpus": [
+      "NVIDIA GeForce RTX 4060 Laptop GPU"
+    ],
+    "official_commit": "794bb0b",
+    "dry_run": false
+  },
+  "config": {
+    "datasets": [
+      "MSL",
+      "SMD"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "window": 50,
+    "batch_size": 128,
+    "lr": 0.0001,
+    "max_epochs": 100,
+    "patience": 10,
+    "val_frac": 0.2,
+    "beta": {
+      "MSL": 6.5,
+      "SMD": 5.0
+    },
+    "beta_paper_text": {
+      "MSL": 6.5,
+      "SMD": 4.0
+    },
+    "fixed_quantile": 0.99,
+    "n_random": 5
+  },
+  "data": {
+    "MSL": {
+      "train_rows": 58317,
+      "test_rows": 73729,
+      "features": 55,
+      "test_anomaly_rate": 0.1053,
+      "anomaly_segments": 36
+    },
+    "SMD": {
+      "train_rows": 708405,
+      "test_rows": 708420,
+      "features": 38,
+      "test_anomaly_rate": 0.0416,
+      "anomaly_segments": 327
+    }
+  },
+  "params": {
+    "MSL": {
+      "AE": 90919,
+      "FAR_module (attention+RNN)": 18132,
+      "AE-FAR total": 109051,
+      "LSTM-VAE": 130308
+    },
+    "SMD": {
+      "AE": 63158,
+      "FAR_module (attention+RNN)": 9845,
+      "AE-FAR total": 73003,
+      "LSTM-VAE": 108174
+    }
+  },
+  "E0_pretrained": {
+    "MSL": {
+      "dynamic_noPA": [
+        0.11261261261261261,
+        0.00965748132886943,
+        0.017789373814041744
+      ],
+      "dynamic_PA": [
+        0.9259305677403183,
+        0.951326294102498,
+        0.9384566529056844
+      ],
+      "dynamic_flag_rate": 0.009039210629894542,
+      "auc_roc": 0.6306274717421371,
+      "auc_pr": 0.15200236013557517,
+      "paper_text_beta": [
+        0.9259305677403183,
+        0.951326294102498,
+        0.9384566529056844
+      ]
+    },
+    "SMD": {
+      "dynamic_noPA": [
+        0.10933420365535249,
+        0.022755060453742697,
+        0.03767007758911504
+      ],
+      "dynamic_PA": [
+        0.838199982213263,
+        0.9602975139247385,
+        0.8951042309701316
+      ],
+      "dynamic_flag_rate": 0.008650846309132234,
+      "auc_roc": 0.7586972651155504,
+      "auc_pr": 0.16749351891116096,
+      "paper_text_beta": [
+        0.760908234801716,
+        0.9879092514603994,
+        0.8596760846435749
+      ]
+    }
+  },
+  "runs": {
+    "SMD\\ae_seed0\\info.json": {
+      "dataset": "SMD",
+      "base": "ae",
+      "seed": 0,
+      "n_features": 38,
+      "stage1": {
+        "kind": "ae",
+        "status": "early_stopped",
+        "epochs_run": 33,
+        "best_val_loss": 0.3139391878136882,
+        "best_epoch": 21,
+        "train_s": 449.5,
+        "mean_epoch_s": 13.621848484848483
+      },
+      "stage2": {
+        "kind": "composite",
+        "status": "early_stopped",
+        "epochs_run": 34,
+        "best_val_loss": 0.27882943599204707,
+        "best_epoch": 22,
+        "train_s": 1038.3,
+        "mean_epoch_s": 30.53655882352941
+      },
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_vram_gb": 0.22
+    },
+    "SMD\\ae_seed1\\info.json": {
+      "dataset": "SMD",
+      "base": "ae",
+      "seed": 1,
+      "n_features": 38,
+      "stage1": {
+        "kind": "ae",
+        "status": "early_stopped",
+        "epochs_run": 23,
+        "best_val_loss": 0.30856577270305036,
+        "best_epoch": 11,
+        "train_s": 295.4,
+        "mean_epoch_s": 12.842086956521738
+      },
+      "stage2": {
+        "kind": "composite",
+        "status": "early_stopped",
+        "epochs_run": 48,
+        "best_val_loss": 0.25789641175341693,
+        "best_epoch": 36,
+        "train_s": 1439.6,
+        "mean_epoch_s": 29.99
+      },
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_vram_gb": 0.22
+    },
+    "SMD\\ae_seed2\\info.json": {
+      "dataset": "SMD",
+      "base": "ae",
+      "seed": 2,
+      "n_features": 38,
+      "stage1": {
+        "kind": "ae",
+        "status": "early_stopped",
+        "epochs_run": 45,
+        "best_val_loss": 0.30517714892622577,
+        "best_epoch": 33,
+        "train_s": 581.2,
+        "mean_epoch_s": 12.915022222222222
+      },
+      "stage2": {
+        "kind": "composite",
+        "status": "early_stopped",
+        "epochs_run": 18,
+        "best_val_loss": 0.2823077718581745,
+        "best_epoch": 6,
+        "train_s": 526.9,
+        "mean_epoch_s": 29.27122222222222
+      },
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_vram_gb": 0.22
+    },
+    "MSL\\ae_seed0\\info.json": {
+      "dataset": "MSL",
+      "base": "ae",
+      "seed": 0,
+      "n_features": 55,
+      "stage1": {
+        "kind": "ae",
+        "status": "early_stopped",
+        "epochs_run": 20,
+        "best_val_loss": 0.526463643619586,
+        "best_epoch": 8,
+        "train_s": 11.6,
+        "mean_epoch_s": 0.57765
+      },
+      "stage2": {
+        "kind": "composite",
+        "status": "completed",
+        "epochs_run": 100,
+        "best_val_loss": 0.3696788462361188,
+        "best_epoch": 99,
+        "train_s": 147.1,
+        "mean_epoch_s": 1.4700500000000003
+      },
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_vram_gb": 0.048
+    },
+    "MSL\\ae_seed1\\info.json": {
+      "dataset": "MSL",
+      "base": "ae",
+      "seed": 1,
+      "n_features": 55,
+      "stage1": {
+        "kind": "ae",
+        "status": "early_stopped",
+        "epochs_run": 28,
+        "best_val_loss": 0.5319048099963066,
+        "best_epoch": 16,
+        "train_s": 20.2,
+        "mean_epoch_s": 0.7212142857142858
+      },
+      "stage2": {
+        "kind": "composite",
+        "status": "completed",
+        "epochs_run": 100,
+        "best_val_loss": 0.40502454636837254,
+        "best_epoch": 99,
+        "train_s": 163.0,
+        "mean_epoch_s": 1.6286500000000002
+      },
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_vram_gb": 0.048
+    },
+    "MSL\\ae_seed2\\info.json": {
+      "dataset": "MSL",
+      "base": "ae",
+      "seed": 2,
+      "n_features": 55,
+      "stage1": {
+        "kind": "ae",
+        "status": "early_stopped",
+        "epochs_run": 21,
+        "best_val_loss": 0.529116360622888,
+        "best_epoch": 9,
+        "train_s": 15.4,
+        "mean_epoch_s": 0.7327619047619048
+      },
+      "stage2": {
+        "kind": "composite",
+        "status": "completed",
+        "epochs_run": 100,
+        "best_val_loss": 0.40789734708672326,
+        "best_epoch": 99,
+        "train_s": 176.1,
+        "mean_epoch_s": 1.76012
+      },
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_vram_gb": 0.049
+    },
+    "MSL\\vae_seed0\\info.json": {
+      "dataset": "MSL",
+      "base": "vae",
+      "seed": 0,
+      "n_features": 55,
+      "stage1": {
+        "kind": "vae",
+        "status": "completed",
+        "epochs_run": 100,
+        "best_val_loss": 963.8907517443646,
+        "best_epoch": 99,
+        "train_s": 3836.8,
+        "mean_epoch_s": 38.367689999999996
+      },
+      "stage2": {
+        "kind": "composite",
+        "status": "completed",
+        "epochs_run": 100,
+        "best_val_loss": 0.5098882750464107,
+        "best_epoch": 99,
+        "train_s": 2370.3,
+        "mean_epoch_s": 23.70141
+      },
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_vram_gb": 1.015
+    }
+  },
+  "summary_F1": {
+    "MSL": {
+      "AE": {
+        "dynamic_noPA": [
+          0.014082269824658768,
+          0.0002808308664579124,
+          3
+        ],
+        "dynamic_PA": [
+          0.9152565527142671,
+          0.0003324155863706683,
+          3
+        ],
+        "fixed_noPA": [
+          0.0654718485016648,
+          8.942835478016828e-05,
+          3
+        ],
+        "fixed_PA": [
+          0.8847595766128357,
+          0.00135126145854208,
+          3
+        ],
+        "best_noPA": [
+          0.23362104397862718,
+          0.00468752166309728,
+          3
+        ],
+        "best_PA": [
+          0.8642846522996269,
+          3.181824795923061e-05,
+          3
+        ]
+      },
+      "AE-FAR": {
+        "dynamic_noPA": [
+          0.016650241100741935,
+          0.0026131620078708863,
+          3
+        ],
+        "dynamic_PA": [
+          0.9175710708454171,
+          0.007157916592636034,
+          3
+        ],
+        "fixed_noPA": [
+          0.06547533978718413,
+          0.00027088489697824807,
+          3
+        ],
+        "fixed_PA": [
+          0.8853582280753725,
+          0.000839510586374646,
+          3
+        ],
+        "best_noPA": [
+          0.23961439300526846,
+          0.00469602034956873,
+          3
+        ],
+        "best_PA": [
+          0.8703283846984666,
+          0.006805097187924226,
+          3
+        ]
+      },
+      "VAE": {
+        "dynamic_noPA": [
+          0.009754907938056334,
+          0.0,
+          1
+        ],
+        "dynamic_PA": [
+          0.8990219224283306,
+          0.0,
+          1
+        ],
+        "fixed_noPA": [
+          0.06551840594393786,
+          0.0,
+          1
+        ],
+        "fixed_PA": [
+          0.8639428798095994,
+          0.0,
+          1
+        ],
+        "best_noPA": [
+          0.1970631095168703,
+          0.0,
+          1
+        ],
+        "best_PA": [
+          0.8569960169600411,
+          0.0,
+          1
+        ]
+      },
+      "VAE-FAR": {
+        "dynamic_noPA": [
+          0.01300578034682081,
+          0.0,
+          1
+        ],
+        "dynamic_PA": [
+          0.9183874139626352,
+          0.0,
+          1
+        ],
+        "fixed_noPA": [
+          0.06543321299638989,
+          0.0,
+          1
+        ],
+        "fixed_PA": [
+          0.8649722001588562,
+          0.0,
+          1
+        ],
+        "best_noPA": [
+          0.19804954601502073,
+          0.0,
+          1
+        ],
+        "best_PA": [
+          0.8565008025682183,
+          0.0,
+          1
+        ]
+      },
+      "Random": {
+        "dynamic_noPA": [
+          0.0,
+          0.0,
+          5
+        ],
+        "dynamic_PA": [
+          0.0,
+          0.0,
+          5
+        ],
+        "fixed_noPA": [
+          0.018440550393978593,
+          0.0007548774096615882,
+          5
+        ],
+        "fixed_PA": [
+          0.8940809081544628,
+          0.016507139717865233,
+          5
+        ],
+        "best_noPA": [
+          0.1748503530994283,
+          0.001205467549478779,
+          5
+        ],
+        "best_PA": [
+          0.9071609290869184,
+          0.008157000622820904,
+          5
+        ]
+      }
+    },
+    "SMD": {
+      "AE": {
+        "dynamic_noPA": [
+          0.03734119380920656,
+          0.0005007788452779663,
+          3
+        ],
+        "dynamic_PA": [
+          0.896872374228812,
+          0.0059428083915179005,
+          3
+        ],
+        "fixed_noPA": [
+          0.11569071933122932,
+          0.009635114869583575,
+          3
+        ],
+        "fixed_PA": [
+          0.8109017737736276,
+          0.012246950870850913,
+          3
+        ],
+        "best_noPA": [
+          0.225130916958307,
+          0.004087986552484368,
+          3
+        ],
+        "best_PA": [
+          0.8553601064156965,
+          0.004278221242120147,
+          3
+        ]
+      },
+      "AE-FAR": {
+        "dynamic_noPA": [
+          0.036739470650416634,
+          0.0001375322304445212,
+          3
+        ],
+        "dynamic_PA": [
+          0.8885611592721009,
+          0.006805665412213258,
+          3
+        ],
+        "fixed_noPA": [
+          0.13930193190286833,
+          0.010102560674786496,
+          3
+        ],
+        "fixed_PA": [
+          0.7986960494162426,
+          0.007102123332063171,
+          3
+        ],
+        "best_noPA": [
+          0.22890296984927205,
+          0.005818143027676021,
+          3
+        ],
+        "best_PA": [
+          0.8496424658375444,
+          0.012633523860057073,
+          3
+        ]
+      },
+      "Random": {
+        "dynamic_noPA": [
+          0.0,
+          0.0,
+          5
+        ],
+        "dynamic_PA": [
+          0.0,
+          0.0,
+          5
+        ],
+        "fixed_noPA": [
+          0.01703898379325449,
+          0.001148106919330526,
+          5
+        ],
+        "fixed_PA": [
+          0.8256356882384412,
+          0.014275869530482401,
+          5
+        ],
+        "best_noPA": [
+          0.07656876826308752,
+          0.0002028195330793748,
+          5
+        ],
+        "best_PA": [
+          0.8256356882384412,
+          0.014275869530482401,
+          5
+        ]
+      }
+    }
+  },
+  "summary_auc": {
+    "MSL": {
+      "AE": {
+        "auc_roc": [
+          0.616506434693085,
+          0.0029445576193643515,
+          3
+        ],
+        "auc_pr": [
+          0.14748324995679052,
+          0.0012319491954865991,
+          3
+        ]
+      },
+      "AE-FAR": {
+        "auc_roc": [
+          0.627321831129922,
+          0.008541765100596697,
+          3
+        ],
+        "auc_pr": [
+          0.15136019503586656,
+          0.0035718446788629457,
+          3
+        ]
+      },
+      "VAE": {
+        "auc_roc": [
+          0.5486806245064008,
+          0.0,
+          1
+        ],
+        "auc_pr": [
+          0.13840483554615754,
+          0.0,
+          1
+        ]
+      },
+      "VAE-FAR": {
+        "auc_roc": [
+          0.550162308630721,
+          0.0,
+          1
+        ],
+        "auc_pr": [
+          0.13967886206598432,
+          0.0,
+          1
+        ]
+      },
+      "Random": {
+        "auc_roc": [
+          0.5016161764894289,
+          0.002194547012768186,
+          5
+        ],
+        "auc_pr": [
+          0.10589753003952176,
+          0.0006842137081616974,
+          5
+        ]
+      }
+    },
+    "SMD": {
+      "AE": {
+        "auc_roc": [
+          0.7145392882743566,
+          0.006464690533175525,
+          3
+        ],
+        "auc_pr": [
+          0.14229131758327604,
+          0.0025940085489511923,
+          3
+        ]
+      },
+      "AE-FAR": {
+        "auc_roc": [
+          0.7223453508961007,
+          0.0005619963293364765,
+          3
+        ],
+        "auc_pr": [
+          0.14508302216915236,
+          0.002477107215586876,
+          3
+        ]
+      },
+      "Random": {
+        "auc_roc": [
+          0.4992380932964485,
+          0.0006725927807285222,
+          5
+        ],
+        "auc_pr": [
+          0.041534995062782264,
+          0.00016167903600202715,
+          5
+        ]
+      }
+    }
+  },
+  "paper_reference": {
+    "table3": {
+      "MSL": {
+        "AE-FAR": [
+          92.59,
+          95.13,
+          93.85
+        ],
+        "VAE-FAR": [
+          90.23,
+          94.89,
+          92.5
+        ],
+        "AnomalyTransformer": [
+          92.09,
+          95.15,
+          93.59
+        ],
+        "DCdetector": [
+          93.69,
+          99.69,
+          96.6
+        ],
+        "OmniAnomaly": [
+          89.02,
+          86.37,
+          87.67
+        ]
+      },
+      "SMD": {
+        "AE-FAR": [
+          92.01,
+          88.2,
+          90.06
+        ],
+        "VAE-FAR": [
+          89.95,
+          94.59,
+          92.21
+        ],
+        "AnomalyTransformer": [
+          89.4,
+          95.45,
+          92.33
+        ],
+        "DCdetector": [
+          83.59,
+          91.1,
+          87.18
+        ],
+        "OmniAnomaly": [
+          83.68,
+          86.82,
+          85.22
+        ]
+      }
+    },
+    "table1": {
+      "MSL": {
+        "AE": [
+          95.7,
+          20.91,
+          34.32
+        ],
+        "AE-FAR": [
+          83.57,
+          90.45,
+          86.87
+        ],
+        "VAE-FAR": [
+          52.87,
+          96.87,
+          68.41
+        ],
+        "AE*": [
+          85.23,
+          99.54,
+          91.83
+        ],
+        "AE-FAR*": [
+          92.59,
+          95.13,
+          93.85
+        ],
+        "VAE-FAR*": [
+          90.23,
+          94.89,
+          92.5
+        ]
+      },
+      "SMD": {
+        "AE": [
+          38.1,
+          68.09,
+          48.86
+        ],
+        "AE-FAR": [
+          62.72,
+          52.01,
+          56.86
+        ],
+        "VAE-FAR": [
+          81.28,
+          76.81,
+          78.98
+        ],
+        "AE*": [
+          91.89,
+          87.78,
+          89.79
+        ],
+        "AE-FAR*": [
+          92.01,
+          88.2,
+          90.06
+        ],
+        "VAE-FAR*": [
+          89.95,
+          94.59,
+          92.21
+        ]
+      }
+    }
+  }
+}

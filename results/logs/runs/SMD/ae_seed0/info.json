@@ -1,0 +1,26 @@
+{
+  "dataset": "SMD",
+  "base": "ae",
+  "seed": 0,
+  "n_features": 38,
+  "stage1": {
+    "kind": "ae",
+    "status": "early_stopped",
+    "epochs_run": 33,
+    "best_val_loss": 0.3139391878136882,
+    "best_epoch": 21,
+    "train_s": 449.5,
+    "mean_epoch_s": 13.621848484848483
+  },
+  "stage2": {
+    "kind": "composite",
+    "status": "early_stopped",
+    "epochs_run": 34,
+    "best_val_loss": 0.27882943599204707,
+    "best_epoch": 22,
+    "train_s": 1038.3,
+    "mean_epoch_s": 30.53655882352941
+  },
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "peak_vram_gb": 0.22
+}

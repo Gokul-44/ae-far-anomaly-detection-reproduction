@@ -1,0 +1,26 @@
+{
+  "dataset": "MSL",
+  "base": "ae",
+  "seed": 2,
+  "n_features": 55,
+  "stage1": {
+    "kind": "ae",
+    "status": "early_stopped",
+    "epochs_run": 21,
+    "best_val_loss": 0.529116360622888,
+    "best_epoch": 9,
+    "train_s": 15.4,
+    "mean_epoch_s": 0.7327619047619048
+  },
+  "stage2": {
+    "kind": "composite",
+    "status": "completed",
+    "epochs_run": 100,
+    "best_val_loss": 0.40789734708672326,
+    "best_epoch": 99,
+    "train_s": 176.1,
+    "mean_epoch_s": 1.76012
+  },
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "peak_vram_gb": 0.049
+}

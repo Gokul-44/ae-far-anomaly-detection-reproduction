@@ -1,0 +1,12 @@
+[MSL] train (46654, 55) val (11663, 55) test (73729, 55) anomaly rate 0.1053 device cuda
+[MSL] ae seed 0: already done, skipping
+[MSL] ae seed 1 stage1 {'kind': 'ae', 'status': 'early_stopped', 'epochs_run': 28, 'best_val_loss': 0.5319048099963066, 'best_epoch': 16, 'train_s': 20.2, 'mean_epoch_s': 0.7212142857142858}
+[MSL] ae seed 1 stage2 {'kind': 'composite', 'status': 'completed', 'epochs_run': 100, 'best_val_loss': 0.40502454636837254, 'best_epoch': 99, 'train_s': 163.0, 'mean_epoch_s': 1.6286500000000002}
+[MSL] ae seed 2 stage1 {'kind': 'ae', 'status': 'early_stopped', 'epochs_run': 21, 'best_val_loss': 0.529116360622888, 'best_epoch': 9, 'train_s': 15.4, 'mean_epoch_s': 0.7327619047619048}
+[MSL] ae seed 2 stage2 {'kind': 'composite', 'status': 'completed', 'epochs_run': 100, 'best_val_loss': 0.40789734708672326, 'best_epoch': 99, 'train_s': 176.1, 'mean_epoch_s': 1.76012}
+[MSL] vae seed 0 stage1 {'kind': 'vae', 'status': 'completed', 'epochs_run': 100, 'best_val_loss': 963.8907517443646, 'best_epoch': 99, 'train_s': 3836.8, 'mean_epoch_s': 38.367689999999996}
+[MSL] vae seed 0 stage2 {'kind': 'composite', 'status': 'completed', 'epochs_run': 100, 'best_val_loss': 0.5098882750464107, 'best_epoch': 99, 'train_s': 2370.3, 'mean_epoch_s': 23.70141}
+[MSL] DONE
+s_run': 100, 'best_val_loss': 963.8907517443646, 'best_epoch': 99, 'train_s': 3824.5, 'mean_epoch_s': 38.24475}
+[MSL] vae seed 0 stage2 {'kind': 'composite', 'status': 'completed', 'epochs_run': 100, 'best_val_loss': 0.5098882750464107, 'best_epoch': 99, 'train_s': 2366.3, 'mean_epoch_s': 23.66177}
+[MSL] DONE

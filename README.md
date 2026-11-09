@@ -40,7 +40,13 @@ F1 (%) with the paper's dynamic threshold. For our runs: mean ± std over 3 seed
 ![F1 vs beta](figures/beta_sensitivity.png)
 ![Anomaly score timeline](figures/anomaly_score_timeline.png)
 
-All headline numbers are in [`results/key_results.csv`](results/key_results.csv), transcribed from the notebook's printed outputs.
+Headline numbers: [`results/key_results.csv`](results/key_results.csv). Full exported results from the run:
+
+- [`results/metrics_summary.csv`](results/metrics_summary.csv): P/R/F1, flag rate and AUC for every model and evaluation (mean and std over seeds)
+- [`results/metrics_per_seed.csv`](results/metrics_per_seed.csv): the same, per seed
+- [`results/beta_sweep.csv`](results/beta_sweep.csv): F1 with and without point-adjustment for β = 1 … 8
+- [`results/results.json`](results/results.json): environment, config, data statistics, E0 pretrained check and summaries
+- [`results/logs/`](results/logs): training stdout and per-stage training logs (model weights and score files are not included)
 
 ---
 
@@ -88,7 +94,7 @@ The helper code is in [`src/`](src): `aefar_lib.py` (composite model, leak-free 
 dl-proj4-aefar.ipynb      notebook with all outputs
 src/aefar_lib.py          composite model + training + scoring
 src/run_experiment.py     training script (one dataset, several seeds)
-results/key_results.csv   headline numbers
+results/                  headline numbers, full metrics CSVs, results.json, training logs
 figures/                  data, training curves, β sweep, F1 bars, anomaly-score timeline
 ```
 
