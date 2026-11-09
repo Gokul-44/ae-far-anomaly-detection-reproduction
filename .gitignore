@@ -1,0 +1,7 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pt
+*.npz
+aefar_work/
+export/
+*.zip

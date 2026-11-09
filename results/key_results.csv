@@ -1,0 +1,11 @@
+dataset,model,seeds,eval,F1_PA_pct,F1_PA_std,F1_noPA_pct,F1_noPA_std,auc_roc,source
+MSL,AE-FAR (authors' pretrained),1,dynamic beta=6.5,93.85,,1.78,,0.631,notebook cell E0
+SMD,AE-FAR (authors' pretrained),1,dynamic beta=5.0,89.51,,3.77,,0.759,notebook cell E0
+MSL,AE (ours),3,dynamic beta=6.5,91.53,0.03,1.41,0.03,0.617,notebook summary cell
+MSL,AE-FAR (ours),3,dynamic beta=6.5,91.76,0.72,1.67,0.26,0.627,notebook summary cell
+MSL,VAE (ours),1,dynamic beta=6.5,89.90,,0.98,,0.549,notebook summary cell
+MSL,VAE-FAR (ours),1,dynamic beta=6.5,91.84,,1.30,,0.550,notebook summary cell
+MSL,Random scores,5,top-1% fixed threshold,89.41,,1.84,,0.502,notebook evaluation cell
+SMD,AE (ours),3,dynamic beta=5.0,89.69,0.59,3.73,0.05,0.715,notebook summary cell
+SMD,AE-FAR (ours),3,dynamic beta=5.0,88.86,0.68,3.67,0.01,0.722,notebook summary cell
+SMD,Random scores,5,top-1% fixed threshold,82.56,,1.70,,0.499,notebook evaluation cell
